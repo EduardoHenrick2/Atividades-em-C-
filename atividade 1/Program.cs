@@ -1,6 +1,6 @@
 using System;
 
-namespace Atividade_01  
+namespace Atividade_01  //objetivo eh calcular a soma dos n primeiros numeros funções recursivas
 {
     class Program {
         static void Main(string[] args) {
