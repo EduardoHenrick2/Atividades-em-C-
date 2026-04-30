@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.Marshalling;
 using System.Security.Cryptography.X509Certificates;
 
 namespace atividade_6
@@ -6,12 +7,14 @@ namespace atividade_6
     class Elemento
     {
         public int Num;
-        Public Elemento Prox;
+        public Elemento Prox;
+        public Elemento Anterior;
 
         public Elemento()
         {
             Num = 0;
             Prox = null;
+            Anterior = null;
         }
     }
     class Lista
@@ -80,11 +83,43 @@ namespace atividade_6
             }
         }
 
+        public void RetiraElemento(int x)
+        {
+            Aux = Inicio;
+            Anterior = null;
+
+            while (Aux != null)
+            {
+                if (Aux.Num ==x)
+                {
+                    if (Aux ==Inicio)
+                        Inicio = Aux.Prox;
+                    else if (Aux == Fim)
+                    {
+                        Anterior.Prox = null;
+                        Fim = Anterior;
+                    }
+                    else
+                    {
+                        Anterior.Prox = Aux.Prox;
+                    }
+                }
+            }
+        }
+
     }
     class Program
     {  
         static void Main(string[] args)
         {
+            Lista MinhaLista = new Lista();
+
+            MinhaLista.InserirFim(7);
+            MinhaLista.InserirFim(13);
+            MinhaLista.InserirFim(23);
+            MinhaLista.InserirFim(31);
+
+            MinhaLista.MostraLista();
 
         }
     }
