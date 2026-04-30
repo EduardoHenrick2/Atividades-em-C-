@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Security.Cryptography.X509Certificates;
 
@@ -103,6 +104,11 @@ namespace atividade_6
                     {
                         Anterior.Prox = Aux.Prox;
                     }
+                }
+                else
+                {
+                    Anterior = Aux;
+                    Aux = Aux.Prox;
                 }
             }
         }
