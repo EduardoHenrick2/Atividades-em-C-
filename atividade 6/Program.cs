@@ -36,11 +36,53 @@ namespace atividade_6
                 Inicio = Novo;
                 Fim = Novo;
             }
+            else
+            {
+                Fim.Prox = Novo;
+                Fim = Novo;
+            }
+        }
+
+        public void InserirInicio(int x)
+        {
+            Elemento Novo = new Elemento();
+
+            Novo.Num = x;
+            if (Inicio == null)
+            {
+                Inicio = Novo;
+                Fim = Novo;
+            }
+            else
+            {
+                Novo.Prox = Inicio;
+                Inicio = Novo;
+            }
+        }
+        
+        public void MostraLista()
+        {
+            Console.Clear();
+
+            if (Inicio == null)
+            {
+                Console.WriteLine("Lista Vazia");
+                Console.ReadKey();
+            }
+            else
+            {
+                Aux = Inicio;
+                while (Aux != null)
+                {
+                    Console.WriteLine($"{Aux.Num, 7}");
+                    Aux = Aux.Prox;
+                }
+            }
         }
 
     }
     class Program
-    {
+    {  
         static void Main(string[] args)
         {
 
