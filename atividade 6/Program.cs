@@ -9,13 +9,12 @@ namespace atividade_6
     {
         public int Num;
         public Elemento Prox;
-        public Elemento Anterior;
+  
 
         public Elemento()
         {
             Num = 0;
             Prox = null;
-            Anterior = null;
         }
     }
     class Lista
@@ -23,12 +22,14 @@ namespace atividade_6
         private Elemento Inicio;
         private Elemento Fim;
         private Elemento Aux;
+        public Elemento Anterior;
         
         public Lista()
         {
             Inicio = null;
             Fim = null;
             Aux = null;
+            Anterior = null;
         }
 
         public void InserirFim(int x)
